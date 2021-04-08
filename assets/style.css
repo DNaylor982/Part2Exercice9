@@ -1,19 +1,16 @@
 .civility {
-    background-color: #65ebfd;
+    background-color: #4ccddb;
 }
 
 .delivery {
-    background-color: #7cb7fc;  
+    background-color: #49b5f2;  
 }
 
 .payment {
-    background-color: #4b98f1;  
+    background-color: #4682e8;  
 }
 body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 80px 200px 60px 100px;
     line-height: 2;
-}
-p {
-    margin-left: 20px;
 }

@@ -12,11 +12,12 @@
 <body>
 
     <form method="POST" action="#">
-        <fieldset class="civility">
+                 <!-- Nous sommes dans la section identité-->
+        <fieldset class="civility"> <!--L'élément <fieldset> est utilisé afin de regrouper plusieurs contrôles interactifs ainsi que des étiquettes (<label>) dans un formulaire web. -->
             <legend class="civility">Votre identité</legend>
             <!--donne un titre à la section-->
             <ol>
-                <li><label for="sex">Civilité :</label>
+                <li><label for="sex">Civilité :</label> <!--label =étiquette-->
                     <!--le label doit se référer à l'id-->
                     <select name="sex" id="sex">
                         <option value="Madame">Mme</option>
@@ -24,8 +25,8 @@
                         <option value="Monsieur">M.</option>
                     </select>
                 </li>
-                <li><label>Nom :
-                        <input type="text" name="lastname" id="lastname" placeholder="Dupont" /></label>
+                <li><label for="lastname">Nom :</label>
+                    <input type="text" name="lastname" id="lastname" placeholder="Dupont" />
                     <!-- placeholder: indication de saisi-->
                 </li>
                 <li><label for="firstname">Prénom :</label>
@@ -36,13 +37,13 @@
                 </li>
             </ol>
         </fieldset>
-
+                 <!--Nous sommes dans la section Adresse de livraison-->
         <fieldset class="delivery">
             <legend class="delivery">Adresse de livraison</legend>
             <ol>
                 <li><label for="adress">Adresse :</label>
-                    <textarea type="text" name="adress" id="adress" placeholder="70 rue des Jacobins 80000 Amiens" rows="3" cols="20"></textarea>
-                </li>
+                    <textarea name="adress" id="adress" placeholder="70 rue des Jacobins 80000 Amiens" rows="3" cols="20"></textarea>
+                </li> <!-- pas d'attribut type=texte dans une balise textarea-->
                 <li><label for="zipCode">Code postal :</label>
                     <input type="text" name="zipCode" id="zipCode" placeholder="Code postal"/>
                 </li>
@@ -51,30 +52,35 @@
                 </li>
             </ol>
         </fieldset>
+                 <!--Nous sommes dans la section règlement-->
         <fieldset class="payment">
             <legend class="payment">Informations de règlement</legend>
             <ol>
-                <li><label for="card">Type de carte bancaire :</label>
+                <li><label>Type de carte bancaire :
                     <div>
-                        <input type="radio" name="visa" value="VISA"> VISA
+                        <input type="radio" name="cardType" id="visa" value="VISA"> VISA <!--value permet de connaître le choix de l'utilisateur-->
+                        <!--Pour les type=radio, on doit avoir le même name pour n'avoir qu'un seul choix possible-->
                     </div> 
                     <div>
-                        <input type="radio" name="visa" value="Mastercard"> Mastercard
-                    </div>
+                        <input type="radio" name="cardType" id="mastercard" value="Mastercard"> Mastercard
+                    </div></label>
                 </li>
-                <li><label for="card">Numéro de carte :</label>
-                    <input type="text" name="number" id="number" placeholder="Numéro de carte" />
+                <li><label for="cardNumber">Numéro de carte :</label>
+                    <input type="text" name="cardNumber" id="cardNumber" placeholder="Numéro de carte"/>
                 </li>
                 <li><label for="code">Code de sécurité :</label>
-                    <input type="text" name="number" id="number" placeholder="Code de sécurité" />
+                    <input type="text" name="code" id="code" placeholder="Code de sécurité"/>
                 </li>
-                <li><label for="holder">Nom du titulaire :</label>
-                    <input type="text" name="holder" id="holder" placeholder="Nom du titulaire" />
+                <li><label for="cardHolder">Nom du titulaire :</label>
+                    <input type="text" name="cardHolder" id="cardHolder" placeholder="Nom du titulaire"/>
                 </li>
             </ol>
-            <input type="checkbox" /> <label for="text">Enregistrer ma carte bancaire</label>
+            <input type="checkbox" name="save" id="save"/>
+            <label for="save">Enregistrer ma carte bancaire</label>
+            <!--le for doit toujours correspondre à l'id dans l'input concerné-->
         </fieldset>
-    </form>
+        <input type="submit" name="submit" id="submit" value="J'achète"/>
+        <!-- attention à inclure le bouton submit (validation des infos) dans le formulaire (form)-->
+    </form>     
 </body>
-    <footer><input type="submit" value="J'achète" /></footer>
 </html>
